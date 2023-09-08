@@ -14,14 +14,12 @@
 - Profile page where users can update their avatar and display name.
 - Users can create a room to chat with others.
 - Search functionality.
-- Responsive design: the website is optimized for different screen sizes and devices
 
 ## Configuration and Setup
 In order to run this project locally, simply fork and clone the repository or download as zip and unzip on your machine.
 
 - Open the project in your prefered code editor.
 - Go to terminal -> New terminal (If you are using VS code)
-- Split your terminal into two (run the client on one terminal and the server on the other terminal)
 
 In the first terminal
 - cd client and create a .env file in the root of your client directory.
@@ -61,14 +59,3 @@ $ cd server
 $ npm install (to install server-side dependencies)
 & npm start (to start the server)
 ```
-
-
-## Contributing
-
-Contributions to this project are welcome! If you find a bug or want to add a feature, please submit an issue or a pull request. To contribute, follow these steps:
-
-1. Fork the repository
-2. Create a new branch for your feature: `git checkout -b my-new-feature`
-3. Make changes and commit them: `git commit -m 'Add some feature'`
-4. Push your branch to your forked repository: `git push origin my-new-feature`
-5. Create a Pull Request
