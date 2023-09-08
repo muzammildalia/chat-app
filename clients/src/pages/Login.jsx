@@ -115,9 +115,9 @@ function Login() {
             {/* <div className='border-t-[1px] w-[100%] sm:w-[80%] my-3' ></div> */}
             <p className='text-[#fff] text-center sm:-ml-20'>/</p>
             <GoogleLogin
-              clientId={process.env.REACT_APP_CLIENT_ID}
+              clientId="747945752840-kbnqo09rqk5eifdl9oi1osp8g6crcdfr.apps.googleusercontent.com"
               render={(renderProps) => (
-                <button style={{ borderImage: "linear-gradient(to right, rgba(0,195,154,1) 50%, rgba(224,205,115,1) 80%)", borderImageSlice: "1" }} onClick={renderProps.onClick} aria-label="Continue with google" className="focus:ring-2 focus:ring-offset-1  py-3.5 px-4 border rounded-lg  flex items-center w-[100%]  sm:w-[80%]" disableElevation={true} disablefocusRipple={true}>
+                <button style={{ borderImage: "linear-gradient(to right, rgba(0,195,154,1) 50%, rgba(224,205,115,1) 80%)", borderImageSlice: "1" }} onClick={renderProps.onClick} disabled={renderProps.disabled} aria-label="Continue with google" className="focus:ring-2 focus:ring-offset-1  py-3.5 px-4 border rounded-lg  flex items-center w-[100%]  sm:w-[80%]" disableElevation={true} disablefocusRipple={true}>
                   <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg2.svg" alt="google" />
                   <p className="text-[base] font-medium ml-4 text-[#fff]">Continue with Google</p>
                 </button>

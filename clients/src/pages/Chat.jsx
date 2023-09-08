@@ -27,6 +27,7 @@ function Chat(props) {
   const [isTyping, setIsTyping] = useState(false)
   const [loading, setLoading] = useState(false)
   const [showPicker, setShowPicker] = useState(false);
+  const [isOnline, setIsOnline] = useState(false);
   const activeUser = useSelector((state) => state.activeUser)
 
   const keyDownFunction = async (e) => {
@@ -45,6 +46,17 @@ function Chat(props) {
     socket = io(ENDPOINT)
     socket.on("typing", () => setIsTyping(true))
     socket.on("stop typing", () => setIsTyping(false))
+    // Check online status when component mounts
+    socket.emit('setup', activeUser);
+    socket.on('connected', () => {
+      setSocketConnected(true);
+      setIsOnline(true); // User is online when connected
+    });
+
+    // Handle online status when user disconnects
+    socket.on('disconnect', () => {
+      setIsOnline(false); // User is offline when disconnected
+    });
   }, [])
 
   useEffect(() => {
@@ -106,7 +118,13 @@ function Chat(props) {
               <div className='flex items-center gap-x-[10px]'>
                 <div className='flex flex-col items-start justify-center'>
                   <h5 className='text-[17px] text-[#2b2e33] font-bold tracking-wide'>{getChatName(activeChat, activeUser)}</h5>
-                  {/* <p className='text-[11px] text-[#aabac8]'>Last seen 5 min ago</p> */}
+                  {/* <p className='text-[11px] text-[#aabac8]'> */}
+                  {isOnline ? (
+                    <span className="text-[11px] text-[#aabac8]">Online</span>
+                  ) : (
+                    <span className="text-[11px] text-[#aabac8]">Offline</span>
+                  )}
+                  {/* </p> */}
                 </div>
               </div>
               <div>
