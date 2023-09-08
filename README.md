@@ -39,7 +39,7 @@ To get your Google ClientID for authentication, go to the [credential Page ](htt
 - Copy the Client ID and assign it to the variable `REACT_APP_GOOGLE_CLIENT_ID` in your .env file
 
 ```
-$ cd client
+$ cd clients
 $ npm install (to install client-side dependencies)
 $ npm start (to start the client)
 ```
